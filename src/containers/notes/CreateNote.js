@@ -2,6 +2,7 @@ import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { newNote } from '../../actions/noteActions';
+import NoteForm from '../../components/notes/NoteForm';
 
 class CreateNote extends PureComponent {
   static propTypes = {
@@ -14,10 +15,11 @@ class CreateNote extends PureComponent {
   }
 
   render() {
+    const { title, body } = this.state;
 
     return (
       <>
-        <h1>Made it!</h1>
+        <NoteForm title={title} body={body} submitText="Create Note" />
       </>
     );
   }
