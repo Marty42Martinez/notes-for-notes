@@ -5,8 +5,12 @@ import PropTypes from 'prop-types';
 
 function NoteForm({ onSubmit, onChange, title, body, submitText }) {
   return (
-
-  )
+    <form onSubmit={onSubmit}>
+      <input name="title" value={title} onChange={onChange} />
+      <input name="body" value={body} onChange={onChange} />
+      <button>{submitText}</button>
+    </form>
+  );
 }
 
 NoteForm.propTypes = {
