@@ -10,7 +10,7 @@ export default function reducer(state = initialState, action) {
     case NEW_NOTE_PENDING:
       return { ...state, loading: true };
     default:
-      return state
+      return state;
   }
 }
 

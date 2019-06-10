@@ -18,4 +18,29 @@ describe('noteReducer tests', () => {
       list: []
     });
   });
+
+  it('handles the NEW_NOTE action', () => {
+    const initialState = {
+      loading: false,
+      list: []
+    };
+    const action = {
+      type: NEW_NOTE_PENDING,
+      payload: {
+        title: 'hello',
+        body: 'why are you here'
+      }
+    };
+
+    const newState = reducer(initialState, action);
+
+    expect(newState).toEqual({
+      loading: false,
+      list: [{
+        title: 'hello',
+        body: 'why are you here'
+      }]
+    });
+  });
+  
 });
