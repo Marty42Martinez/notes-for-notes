@@ -25,7 +25,7 @@ describe('noteReducer tests', () => {
       list: []
     };
     const action = {
-      type: NEW_NOTE_PENDING,
+      type: NEW_NOTE,
       payload: {
         title: 'hello',
         body: 'why are you here'
