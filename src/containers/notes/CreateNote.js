@@ -14,12 +14,23 @@ class CreateNote extends PureComponent {
     body: ''
   }
 
+  handleSubmit = event => {
+    event.preventDefault();
+
+    const { title, body } = this.state;
+    this.props.createNote({ title, body });
+    this.setState({ title: '', body: '' });
+  }
+
+  handleChange = ({ target }) => {
+    this.setState({ [target.name]: target.value });
+  }
+
   render() {
     const { title, body } = this.state;
-
     return (
       <>
-        <NoteForm title={title} body={body} submitText="Create Note" />
+        <NoteForm onSubmit={this.handleSubmit} onChange={this.handleChange} title={title} body={body} submitText="Create Note" />
       </>
     );
   }
