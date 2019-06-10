@@ -1,14 +1,16 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
+import { newNote } from '../../actions/noteActions';
 
 class CreateNote extends PureComponent {
   static propTypes = {
-
+    createNote: PropTypes.func.isRequired
   }
 
   state = {
-
+    title: '',
+    body: ''
   }
 
   render() {
@@ -21,7 +23,13 @@ class CreateNote extends PureComponent {
   }
 }
 
+const mapDispatchToProps = dispatch => ({
+  createNote(note) {
+    dispatch(newNote(note));
+  }
+});
+
 export default connect(
   null,
-  null
+  mapDispatchToProps
 )(CreateNote);
