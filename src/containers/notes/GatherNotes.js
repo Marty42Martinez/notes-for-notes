@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { fetchAllNotes } from '../../actions/noteActions';
 import NoteList from '../../components/notes/NoteList';
+import { getNotes, getNotesLoading } from '../../selectors/noteSelectors';
 
 class GatherNotes extends PureComponent {
   static propTypes = {
@@ -24,9 +25,8 @@ class GatherNotes extends PureComponent {
 }
 
 const mapStateToProps = state => ({
-  //selectors!
-  notes: '',
-  loading: ''
+  notes: getNotes(state),
+  loading: getNotesLoading(state)
 });
 
 const mapDispatchToProps = dispatch => ({
