@@ -3,6 +3,9 @@
     "ecmaVersion": 9,
     "sourceType": "module"
   },
+  "global": {
+    "process": true
+  },
   "parser": "babel-eslint",
   "env": {
     "es6": true,
