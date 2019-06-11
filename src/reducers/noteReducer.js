@@ -9,6 +9,8 @@ export default function reducer(state = initialState, action) {
   switch(action.type) {
     case FETCH_ALL_NOTES_PENDING:
       return { ...state, loading: true };
+    case FETCH_ALL_NOTES:
+      return { ...state, loading: false, list: action.payload };
     case NEW_NOTE_PENDING:
       return { ...state, loading: true };
     case NEW_NOTE:
