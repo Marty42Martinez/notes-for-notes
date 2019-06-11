@@ -7,14 +7,17 @@ import { getToken } from '../../selectors/sessionSelectors';
 export const withSession = Component => {
   class withSession extends PureComponent {
     static propTypes = {
-
+      token: PropTypes.string.isRequired
     }
 
     componentDidMount() {
-
+      if(!this.props.token) {
+        login();
+      }
     }
 
     render() {
+      if(!this.props.token) return <h1>Not Logged In!</h1>;
       return <Component />;
     }
   }
