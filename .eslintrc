@@ -3,7 +3,7 @@
     "ecmaVersion": 9,
     "sourceType": "module"
   },
-  "global": {
+  "globals": {
     "process": true
   },
   "parser": "babel-eslint",
